@@ -1,20 +1,25 @@
 " Required:
-set runtimepath+=/Users/aenayet/.cache/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-if dein#load_state('/Users/aenayet/.cache/dein')
-	call dein#begin('/Users/aenayet/.cache/dein')
+if dein#load_state('~/.cache/dein')
+	call dein#begin('~/.cache/dein')
 
 	" Let dein manage dein
 	" Required:
-	call dein#add('/Users/aenayet/.cache/dein/repos/github.com/Shougo/dein.vim')
+	call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
 
 	" Add or remove your plugins here:
+	call dein#add('fatih/vim-go')
+	"call dein#add('godoctor/godoctor.vim')
+	call dein#add('jodosha/vim-godebug')
+    " golang stuff
 	call dein#add('Shougo/neosnippet.vim')
 	call dein#add('Shougo/neosnippet-snippets')
 	call dein#add('sheerun/vim-polyglot')
 	call dein#add('Shougo/vimshell')
 	call dein#add('Shougo/deoplete.nvim')
+    call dein#add('zchee/deoplete-go', {'build': 'make'})
 	call dein#add('vim-airline/vim-airline')
 	call dein#add('vim-airline/vim-airline-themes')
 	call dein#add('Shougo/neoinclude.vim')
@@ -30,11 +35,13 @@ if dein#load_state('/Users/aenayet/.cache/dein')
 	call dein#add('junegunn/fzf')
 	call dein#add('zchee/deoplete-jedi')
 	call dein#add('alaric/neovim-visor')
+	call dein#add('majutsushi/tagbar')
 	call dein#add('christoomey/vim-tmux-navigator')
 	call dein#add('autozimu/LanguageClient-neovim', {
 				\ 'rev': 'next',
 				\ 'build': 'bash install.sh',
 				\ })
+    call dein#add('mileszs/ack.vim')
 
 	" Required:
 	call dein#end()

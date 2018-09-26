@@ -39,25 +39,32 @@ set mouse=a mousemodel=popup
 
 " markdown file recognition
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
 
 " relative line numbers
 " Sets relative line numbers in normal mode, absolute line numbers in insert
 " mode
 set number
-set relativenumber
+"set relativenumber
 
 " use ripgreg instead of grep
 set grepprg=rg\ --vimgrep
 
 " python packages in venv
-let g:python_host_prog = '/Users/aenayet/pyenv/nvim2/bin/python'
-let g:python3_host_prog = '/Users/aenayet/pyenv/nvim3/bin/python'
+"let g:python_host_prog = '~/pyenv/nvim2/bin/python'
+"let g:python3_host_prog = '~/pyenv/nvim3/bin/python'
+
+" golang settings
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_deadline = "1s"
 
 " Set colors in terminal
 " Solarized, dark, with true color support
 set termguicolors
 set background=dark
-colorscheme NeoSolarized
+" colorscheme NeoSolarized
+colorscheme molokai
 
 " close vim if only window left is nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
